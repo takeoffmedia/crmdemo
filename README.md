@@ -12,18 +12,18 @@ crmdemo
 ### Configuration:
 
 To run application the following connection strings should be configured in CrmDemo project web.config file:
-
+```xml
   <connectionStrings>
     <add name="DefaultConnection" connectionString="[DB connection string]" providerName="System.Data.SqlClient" />
     <add name="Crm" connectionString="[Dynamics CRM connection]" />
   </connectionStrings>
-  
+```  
 To run the tests the following connection string should be configured in CrmDemo.Test project app.config file:
-
+```xml
   <connectionStrings>
     <add name="Crm" connectionString="[Dynamics CRM connection]" />
   </connectionStrings> 
-  
+  ```
 ---  
 
 ### Notes:
