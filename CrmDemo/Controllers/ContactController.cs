@@ -36,7 +36,15 @@ namespace CrmDemo.Controllers
             {
                 return BadRequest(ModelState);
             }
-            return Ok(_crmManager.AddContact(contact));
+            try
+            {
+                var id = _crmManager.AddContact(contact);
+                return Ok(id);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // PUT: api/Contact/
