@@ -31,4 +31,4 @@ To run the tests the following connection string should be configured in CrmDemo
 + A MVC controller is used to load the web page with the templates and the required javascript/css bundles.
 + Web Api SPA project template was used to generate the project.
 + Angular-Spa-Security nuget package used to manage authentication with AngularJs
-  
++ More users could be registered in the application, but all of them will use the same Dynamics CRM account  
