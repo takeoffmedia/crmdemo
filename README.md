@@ -4,8 +4,8 @@ crmdemo
 ## [Demo Site](http://crmdemo.takeoffmedia.com)
 
 ###Credentials:
-*Username: admin
-*Password: @Demo01
+* Username: admin
+* Password: @Demo01
 
 ---
 
