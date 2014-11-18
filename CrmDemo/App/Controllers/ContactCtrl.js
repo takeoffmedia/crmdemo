@@ -1,7 +1,8 @@
 ﻿angular.module('app')
 .controller('ContactCtrl', ['$scope', 'contacts', 'security', function ($scope, contacts, security) {
 
-    if(security.authenticate()){
+    if (security.authenticate()) {
+        //Always refresh contact list in case other user made changes
         contacts.get().then(function () {
             $scope.contacts = contacts.contacts;
         });

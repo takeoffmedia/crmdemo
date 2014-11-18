@@ -96,13 +96,14 @@
             Contacts.delete = function (id) {
                 var deferred = $q.defer();
 
-                Api.deleteContact(id).success(function () {
-                    for (var i = 0; i < contactProvider.contacts.length; i++) {
-                        var contact = contactProvider.contacts[i];
-                        if (contact.id == id) {
-                            contactProvider.contacts.splice(i, 1);
-                        }
+                for (var i = 0; i < contactProvider.contacts.length; i++) {
+                    var contact = contactProvider.contacts[i];
+                    if (contact.id == id) {
+                        contactProvider.contacts.splice(i, 1);
                     }
+                }
+
+                Api.deleteContact(id).success(function () {
                     deferred.resolve();
                 }).error(function (errorData) {
                     deferred.reject(errorData);
