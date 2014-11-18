@@ -29,6 +29,6 @@ To run the tests the following connection string should be configured in CrmDemo
 ### Notes:
   
 + A MVC controller is used to load the web page with the templates and the required javascript/css bundles.
-+ Web Api template was used to generate the project.
-+ Angular-Spa-Security package used to manage authentication with AngularJs
++ Web Api SPA project template was used to generate the project.
++ Angular-Spa-Security nuget package used to manage authentication with AngularJs
   
