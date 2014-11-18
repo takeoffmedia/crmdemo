@@ -1,0 +1,71 @@
+﻿<script type="text/ng-template" id="/">
+    <div class="container" ng-controller="ContactCtrl">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>List Of Contacts - <a ng-click="addContact()">(Add New)</a></h2>
+                <div id="contactList" class="col-md-3" ng-repeat="contact in contacts">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{{contact.lastName}}, {{contact.firstName}}</h3> 
+                        </div>
+                        <div class="panel-body">
+                            <p>{{contact.email}}</p>
+                            <span class="glyphicon glyphicon-remove" ng-click="deleteContact(contact)"><span>Remove</span></span><span> | </span>
+                            <span class="glyphicon glyphicon-edit" ng-click="selectContact(contact)"><span>Edit</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="/add">
+    <div class="container" ng-controller="AddCtrl">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                <h2>Add New Contact</h2>
+                <form name="addContactForm">
+                    <div class="form-group text">
+                        <label for="username">Email</label>
+                        <input ng-model="contactToAdd.email" type="text" placeholder="Email" class="form-control" required />
+                    </div>
+                    <div class="form-group text">
+                        <label for="username">First Name</label>
+                        <input ng-model="contactToAdd.firstName" type="text" placeholder="First Name" class="form-control" required />
+                    </div>
+                    <div class="form-group text">
+                        <label for="username">Last Name</label>
+                        <input ng-model="contactToAdd.lastName" type="text" placeholder="Last Name" class="form-control" required />
+                    </div>
+                    <button ng-click="addContact(contactToAdd)" class="btn btn-success btn-lg">Add New Contact</button>
+                    <button ng-click="cancel()" class="btn btn-warning btn-lg">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="/edit">
+    <div class="container" ng-controller="EditCtrl">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                <h2>Edit Contact</h2>
+                <form name="editContactForm">
+                    <div class="form-group text">
+                        <label for="username">Email</label>
+                        <input ng-model="contactToEdit.email" type="text" placeholder="Email" class="form-control" required />
+                    </div>
+                    <div class="form-group text">
+                        <label for="username">First Name</label>
+                        <input ng-model="contactToEdit.firstName" type="text" placeholder="First Name" class="form-control" required />
+                    </div>
+                    <div class="form-group text">
+                        <label for="username">Last Name</label>
+                        <input ng-model="contactToEdit.lastName" type="text" placeholder="Last Name" class="form-control" required />
+                    </div>
+                    <button ng-click="editContact(contactToEdit)" class="btn btn-success btn-lg">Save Changes</button>
+                    <button ng-click="cancel()" class="btn btn-warning btn-lg">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</script>
